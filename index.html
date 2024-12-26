@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Client Portfolio</title>
+    <style>
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .popup .popup-content {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .popup .popup-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup .popup-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Client Portfolio</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#recommendations">Recommendations</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-header">
+                <img src="Screenshot 2024-12-15 230717.png" alt="Profile Image" class="profile-img">
+                <h2 class="profile_name">Adewale Alatise</h2>
+            </div>
+            <p class="about-summary">As a passionate web developer, I specialize in creating user-friendly, visually stunning websites that offer a seamless experience across devices. With a strong foundation in HTML, CSS, and JavaScript, I am dedicated to turning ideas into functional and interactive websites. My mission is to combine creativity with technology to deliver projects that exceed client expectations and drive success.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div>
+                    <img src="image5.png" alt="HTML Logo">
+                    <p>HTML</p>
+                </div>
+                <div>
+                    <img src="IMAGE6.jpg" alt="CSS Logo">
+                    <p>CSS</p>
+                </div>
+                <div>
+                    <img src="IMAGE7.jpg" alt="JavaScript Logo">
+                    <p>JavaScript</p>
+                </div>
+                <!-- Additional Skills -->
+                <div>
+                    <img src="image8.png" alt="React Logo">
+                    <p>React</p>
+                </div>
+                <div>
+                    <img src="image 9.png" alt="Git Logo">
+                    <p>Git</p>
+                </div>
+                <div>
+                    <img src="image10.png" alt="Bootstrap Logo">
+                    <p>Bootstrap</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Corporate Website for Wiko Corporation</h3>
+                    <p>This project involved the creation of a modern, responsive corporate website for Wiko Corporation, aimed at enhancing their online presence and improving user engagement. The site was designed to reflect the company's professionalism and industry expertise, featuring a clean, sleek layout with user-friendly navigation.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Interactive Dashboard for Data Analytics</h3>
+                    <p>In this project, I developed an interactive dashboard for a data analytics firm, allowing users to visualize key performance metrics and track real-time data. The dashboard was built using React and integrated with API data sources, providing an intuitive interface for data-driven decision-making.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>This portfolio website showcases my work and development skills. The site was built with a focus on visual appeal and ease of use, featuring an interactive portfolio section and a smooth, engaging user experience. It reflects my commitment to quality design and web development practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="recommendations">
+            <h2>Recommendations</h2>
+            <div class="recommendations-list" id="recommendations-list">
+                <div>
+                    <p>"Adewale is a talented web developer who delivers excellent results."</p>
+                    <p>- Jane Smith</p>
+                </div>
+                <div>
+                    <p>"Highly recommend Adewale's services. Professional and timely."</p>
+                    <p>- Bob Johnson</p>
+                </div>
+                <div>
+                    <p>"Creative and detail-oriented. A pleasure to work with."</p>
+                    <p>- Sarah Lee</p>
+                </div>
+            </div>
+            <div class="recommendation-form">
+                <h3>Add Your Recommendation</h3>
+                <textarea id="recommendation-text" placeholder="Write your recommendation here..."></textarea>
+                <input id="recommendation-author" type="text" placeholder="Your name">
+                <button onclick="addRecommendation()">Submit</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        &#169; 2024 Client Portfolio
+    </footer>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Thank you for your submission!</p>
+            <button class="popup-button" onclick="showPopup(false)">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(show) {
+            const popup = document.getElementById('popup');
+            if (show) {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        }
+
+        function addRecommendation() {
+            const text = document.getElementById('recommendation-text').value;
+            const author = document.getElementById('recommendation-author').value;
+
+            if (text && author) {
+                const list = document.getElementById('recommendations-list');
+                const newRecommendation = document.createElement('div');
+                newRecommendation.innerHTML = `<p>"${text}"</p><p>- ${author}</p>`;
+                list.appendChild(newRecommendation);
+
+                // Show popup after submission
+                showPopup(true);
+
+                document.getElementById('recommendation-text').value = '';
+                document.getElementById('recommendation-author').value = '';
+            } else {
+                alert('Please fill out both fields before submitting.');
+            }
+        }
+    </script>
+</body>
+</html>
