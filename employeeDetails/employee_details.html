@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Management System</title>
-  <link rel="stylesheet" href="employee_details.css"> <!-- External CSS -->
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="employee_details.css">
 </head>
 <body>
-  
-  <h1>🚀 Employee Management System</h1>
 
-  <div class="button-container">
-    <button onclick="displayEmployees()">📋 Display Employees</button>
-    <button onclick="calculateTotalSalaries()">💰 Calculate Total Salaries</button>
-    <button onclick="displayHREmployees()">🏢 Display HR Employees</button>
-    <button onclick="findEmployeeById()">🔍 Find Employee by ID</button>
-  </div>
+    <h1>👨‍💼 Employee Management System 👩‍💼</h1>
 
-  <div id="employeesDetails"></div>
+    <div>
+        <button onclick="displayEmployees()">Display Employees</button>
+        <button onclick="calculateTotalSalaries()">Calculate Total Salaries</button>
+        <button onclick="displayHREmployees()">Display HR Employees</button>
+        <button onclick="findEmployeeById(2)">Find Employee by ID 2</button>
+        <button onclick="findEmployeesBySpecialization('JavaScript')">Find JavaScript Employees</button>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Employee Management Inc. | Designed by WIKO</p>
-  </footer>
+    <div id="employeesDetails"></div>
 
-  <script src="employee_details.js"></script> <!-- Linking the JavaScript file -->
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Employee Management | Developed by <a href="https://github.com/wiko-tech">Wiko-Tech</a></p>
+    </footer>
+
+    <script src="./employee_details.js"></script>
 </body>
 </html>
