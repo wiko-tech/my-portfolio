@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .btn-add {
+            background-color: #28a745;
+        }
+        .btn-add:hover {
+            background-color: #218838;
+        }
+        .btn-clear {
+            background-color: #dc3545;
+        }
+        .btn-clear:hover {
+            background-color: #c82333;
+        }
+        .btn-clear-all {
+            background-color: #007bff;
+        }
+        .btn-clear-all:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ToDo List</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button id="addTaskBtn" class="btn-add">Add Task</button>
+
+    <ul id="taskList">
+        <!-- Tasks will be displayed here -->
+    </ul>
+
+    <button id="clearCompletedBtn" class="btn-clear">Clear Completed</button>
+    <button id="clearAllBtn" class="btn-clear-all">Clear All Tasks</button>
+
+    <!-- Linking JavaScript file -->
+    <script src="./todo_list.js"></script>
+</body>
+
+</html>
