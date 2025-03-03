@@ -1,0 +1,117 @@
+/* styles.css - Advanced and Unique CSS Styling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.topnav {
+    background: linear-gradient(90deg, #ff8c00, #ff0080);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    border-radius: 5px;
+    position: relative;
+}
+
+.topnav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.topnav a.active {
+    background: rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid #fff;
+}
+
+/* Unique Page Styling */
+.section {
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f8b400;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 500px) {
+    .topnav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .topnav a {
+        margin: 5px 0;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Home Page */
+.home-content {
+    background-color: #222;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* About Page */
+.about-content {
+    background-color: #333;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* Services Page */
+.services-content {
+    background-color: #444;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* Contact Page */
+.contact-content {
+    background-color: #555;
+    padding: 50px;
+    border-radius: 10px;
+}
